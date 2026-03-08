@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FloWrestling Star Rankings</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#0b0b0b;color:white;overflow-x:hidden}
+
+.background{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.95)),url("https://upload.wikimedia.org/wikipedia/commons/2/2b/Wrestling_mat.jpg");background-size:cover;background-position:center;z-index:-1}
+
+header{display:flex;justify-content:center;align-items:center;padding:22px;background:rgba(10,10,10,.9);border-bottom:1px solid #222;backdrop-filter:blur(8px)}
+
+.logo{font-family:Oswald;font-size:36px;font-weight:700;letter-spacing:2px}
+.logo span{color:#ff2a2a}
+
+.hero{text-align:center;padding:100px 20px 60px}
+.hero h1{font-family:Oswald;font-size:64px}
+.hero span{color:#ff2a2a}
+.hero p{margin-top:10px;color:#aaa}
+
+.container{max-width:1100px;margin:auto;padding:40px 20px}
+
+.card{background:rgba(18,18,18,.92);border-radius:14px;padding:35px;border:1px solid #222;box-shadow:0 20px 60px rgba(0,0,0,.7), inset 0 0 40px rgba(255,255,255,.02);margin-bottom:40px;animation:fadeIn .8s ease}
+
+.card h2{font-family:Oswald;margin-bottom:18px}
+
+.controls{display:flex;justify-content:space-between;margin-bottom:18px;gap:10px;flex-wrap:wrap}
+
+.search{padding:10px 14px;border-radius:6px;border:none;background:#1c1c1c;color:white;width:220px}
+
+.sort-btn{padding:10px 14px;border-radius:6px;border:none;background:#ff2a2a;color:white;font-weight:600;cursor:pointer}
+
+.sort-btn:hover{opacity:.85}
+
+table{width:100%;border-collapse:collapse}
+
+th{text-align:left;padding:14px;font-size:13px;color:#9a9a9a;background:#1a1a1a}
+
+td{padding:14px;border-bottom:1px solid #262626;font-size:15px}
+
+tr:hover{background:#1b1b1b;cursor:pointer}
+
+.stars{color:#FFD700;letter-spacing:2px}
+
+.arrow-up{color:#7CFF9B;font-weight:700}
+.arrow-down{color:#ff5a5a;font-weight:700}
+.arrow-new{color:#4cc3ff;font-weight:700}
+
+.prospect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+
+.prospect{background:#161616;padding:18px;border-radius:10px;border:1px solid #222;text-align:center}
+
+.prospect-name{font-weight:600;margin-bottom:6px}
+
+.community{text-align:center}
+
+.discord-btn{display:inline-block;margin-top:18px;padding:14px 32px;background:#5865F2;border-radius:8px;font-weight:600;text-decoration:none;color:white}
+
+.discord-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(88,101,242,.6)}
+
+footer{text-align:center;color:#666;padding:30px;margin-top:40px}
+
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center}
+
+.modal-content{background:#161616;padding:30px;border-radius:10px;border:1px solid #333;width:300px;text-align:center}
+
+.close{margin-top:14px;background:#ff2a2a;border:none;color:white;padding:8px 16px;border-radius:6px;cursor:pointer}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:700px){.hero h1{font-size:42px}}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<header>
+<div class="logo">Flo<span>Wrestling</span></div>
+</header>
+
+<section class="hero">
+<h1>Flo<span>Wrestling</span> Star Rankings</h1>
+<p>Official Roblox Wrestling Prospect Ratings</p>
+</section>
+
+<div class="container">
+
+<div class="card">
+<h2>Star Rankings</h2>
+
+<div class="controls">
+<input class="search" id="search" placeholder="Search wrestler...">
+<button class="sort-btn" onclick="sortStars()">Sort by Stars</button>
+</div>
+
+<table id="rankTable">
+<thead>
+<tr>
+<th>Wrestler</th>
+<th>Stars</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Lebron</td><td data-stars="3" class="stars">⭐⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Jibcoo</td><td data-stars="3" class="stars">⭐⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Legenito</td><td data-stars="3" class="stars">⭐⭐⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>_ncain</td><td data-stars="3" class="stars">⭐⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Stranger3aia</td><td data-stars="3" class="stars">⭐⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>M1x1yana</td><td data-stars="3" class="stars">⭐⭐⭐</td><td class="arrow-new">NEW</td></tr>
+
+<tr><td>Hunt</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Igor (NativeorDrink)</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Celnudy</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Wavy7027</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Deaniswasted</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>A1spect</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Hank.67</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Zoron</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Fluxenr</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Perkmusik</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Syonix</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Vxwj</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Yeat</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Kyler Larkin</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Meinky</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Swavvy</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Wyatt (Wywytheman09)</td><td data-stars="2" class="stars">⭐⭐</td><td class="arrow-up">↑</td></tr>
+
+<tr><td>Cwiggle</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Peterwrestles</td><td data-stars="1" class="stars">⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Ceokhii (xrofylol)</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Thug (Clappingc)</td><td data-stars="1" class="stars">⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Bells</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Techfaller</td><td data-stars="1" class="stars">⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Wes062289</td><td data-stars="1" class="stars">⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Big waddle</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Ducfishyx</td><td data-stars="1" class="stars">⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Pabloescobar (X4LIFE)</td><td data-stars="1" class="stars">⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Dannyblaze</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Golden</td><td data-stars="1" class="stars">⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Purxivet (Jason Richardson)</td><td data-stars="1" class="stars">⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Aqs (spookylookin, Logan)</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Rgthemanz</td><td data-stars="1" class="stars">⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>Prismatix</td><td data-stars="1" class="stars">⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Cromatix</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+<tr><td>Kiki</td><td data-stars="1" class="stars">⭐</td><td class="arrow-up">↑</td></tr>
+<tr><td>RARE</td><td data-stars="1" class="stars">⭐</td><td class="arrow-new">NEW</td></tr>
+<tr><td>Stickofbuter</td><td data-stars="1" class="stars">⭐</td><td class="arrow-down">↓</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h2>Top Prospects</h2>
+<div class="prospect-grid">
+<div class="prospect"><div class="prospect-name">Lebron</div><div class="stars">⭐⭐⭐</div></div>
+<div class="prospect"><div class="prospect-name">Jibcoo</div><div class="stars">⭐⭐⭐</div></div>
+<div class="prospect"><div class="prospect-name">Stranger3aia</div><div class="stars">⭐⭐⭐</div></div>
+<div class="prospect"><div class="prospect-name">M1x1yana</div><div class="stars">⭐⭐⭐</div></div>
+</div>
+</div>
+
+<div class="card community">
+<h2>Join The Community</h2>
+<p>Talk Roblox wrestling, rankings, and matches.</p>
+<a class="discord-btn" href="#">Join Discord</a>
+</div>
+
+</div>
+
+<div class="modal" id="profileModal">
+<div class="modal-content" id="modalContent">
+<h3 id="modalName"></h3>
+<p>Roblox Wrestling Prospect</p>
+<button class="close" onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<footer>
+FloWrestling Star Rankings • Roblox Wrestling Community
+</footer>
+
+<script>
+
+const searchInput=document.getElementById("search");
+searchInput.addEventListener("keyup",function(){
+let filter=searchInput.value.toLowerCase();
+let rows=document.querySelectorAll("#rankTable tbody tr");
+rows.forEach(r=>{
+let name=r.children[0].innerText.toLowerCase();
+r.style.display=name.includes(filter)?"":"none";
+});
+});
+
+function sortStars(){
+let table=document.getElementById("rankTable");
+let rows=[...table.tBodies[0].rows];
+rows.sort((a,b)=>b.children[1].dataset.stars-a.children[1].dataset.stars);
+rows.forEach(r=>table.tBodies[0].appendChild(r));
+}
+
+const rows=document.querySelectorAll("#rankTable tbody tr");
+rows.forEach(r=>{
+r.addEventListener("click",()=>{
+let name=r.children[0].innerText;
+document.getElementById("modalName").innerText=name;
+document.getElementById("profileModal").style.display="flex";
+});
+});
+
+function closeModal(){
+document.getElementById("profileModal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
