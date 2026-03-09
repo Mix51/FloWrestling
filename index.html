@@ -17,7 +17,7 @@
 body{
 margin:0;
 font-family:Inter;
-background:linear-gradient(180deg,#0a0a0a,#111);
+background:#0b0b0b;
 color:white;
 }
 
@@ -29,7 +29,7 @@ justify-content:space-between;
 align-items:center;
 padding:18px 40px;
 background:#000;
-border-bottom:1px solid #222;
+border-bottom:1px solid #1f1f1f;
 }
 
 .logo{
@@ -39,7 +39,7 @@ color:#d4af37;
 }
 
 nav a{
-color:#ddd;
+color:#aaa;
 text-decoration:none;
 margin-left:25px;
 font-weight:600;
@@ -54,17 +54,16 @@ color:white;
 
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:70px 20px 40px;
 }
 
 .hero h1{
-font-size:50px;
-margin-bottom:10px;
+font-size:46px;
+margin-bottom:8px;
 }
 
 .hero p{
-color:#aaa;
-font-size:18px;
+color:#888;
 }
 
 /* CONTAINER */
@@ -78,8 +77,8 @@ margin:auto;
 /* SEARCH */
 
 .search{
-margin:40px 0;
 text-align:center;
+margin-bottom:35px;
 }
 
 .search input{
@@ -87,34 +86,38 @@ padding:12px 15px;
 width:280px;
 border-radius:6px;
 border:none;
-background:#1a1a1a;
+background:#161616;
 color:white;
 }
 
-/* TABLE */
+/* RANK TABLE */
+
+.rankings{
+background:#111;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,.6);
+}
 
 table{
 width:100%;
 border-collapse:collapse;
-background:#0f0f0f;
-border-radius:10px;
-overflow:hidden;
 }
 
 thead{
-background:#151515;
+background:#181818;
 }
 
 th{
 text-align:left;
-padding:14px;
-font-weight:600;
+padding:16px;
+font-size:14px;
 color:#bbb;
 }
 
 td{
-padding:14px;
-border-top:1px solid #1f1f1f;
+padding:16px;
+border-top:1px solid #1c1c1c;
 }
 
 tr{
@@ -123,17 +126,23 @@ transition:.2s;
 
 tr:hover{
 background:#1a1a1a;
-transform:scale(1.01);
 }
 
-/* STAR */
+/* RANK NUMBER */
+
+.rank{
+font-weight:800;
+color:#d4af37;
+}
+
+/* STARS */
 
 .star{
 color:#d4af37;
 font-weight:700;
 }
 
-/* TOP PROSPECTS */
+/* PROSPECTS */
 
 .prospects{
 margin-top:60px;
@@ -151,26 +160,25 @@ gap:15px;
 
 .card{
 background:#111;
+border:1px solid #222;
 padding:20px;
 border-radius:10px;
 text-align:center;
-border:1px solid #222;
 transition:.2s;
 }
 
 .card:hover{
-transform:translateY(-5px);
-background:#161616;
+background:#181818;
+transform:translateY(-4px);
 }
 
 /* FOOTER */
 
 footer{
 margin-top:80px;
-text-align:center;
 padding:30px;
+text-align:center;
 color:#666;
-font-size:14px;
 }
 
 /* MOBILE */
@@ -207,43 +215,39 @@ padding:15px;
 <section class="hero">
 
 <h1>Roblox Wrestling Rankings</h1>
-<p>Official community ranking system</p>
+<p>Community Star Rankings</p>
 
 </section>
 
 <div class="container">
 
 <div class="search">
-
-<input type="text" id="search" placeholder="Search wrestler...">
-
+<input id="search" placeholder="Search wrestler...">
 </div>
+
+<div class="rankings">
 
 <table>
 
 <thead>
-
 <tr>
 <th>#</th>
 <th>Wrestler</th>
 <th>Stars</th>
 </tr>
-
 </thead>
 
-<tbody id="rankingTable">
-
-</tbody>
+<tbody id="rankingTable"></tbody>
 
 </table>
+
+</div>
 
 <section class="prospects">
 
 <h2>Top Prospects ⭐⭐⭐</h2>
 
-<div class="prospect-grid" id="prospects">
-
-</div>
+<div class="prospect-grid" id="prospects"></div>
 
 </section>
 
@@ -257,12 +261,17 @@ FloWrestling Rankings © 2026
 
 <script>
 
-/* WRESTLER DATA */
+/* WRESTLER LIST */
 
-const wrestlers = [
+const wrestlers=[
 
 {name:"Lebron",stars:3},
 {name:"Jibcoo",stars:3},
+{name:"Legenito",stars:3},
+{name:"_ncain",stars:3},
+{name:"Stranger3aia",stars:3},
+{name:"M1x1yana",stars:3},
+
 {name:"Hunt",stars:2},
 {name:"Igor (NativeorDrink)",stars:2},
 {name:"Celnudy",stars:2},
@@ -270,27 +279,25 @@ const wrestlers = [
 {name:"Deaniswasted",stars:2},
 {name:"A1spect",stars:2},
 {name:"Hank.67",stars:2},
-{name:"Legenito",stars:3},
+{name:"Zoron",stars:2},
+{name:"Fluxenr",stars:2},
+{name:"Perkmusik",stars:2},
+{name:"Syonix",stars:2},
+{name:"Vxwj",stars:2},
+{name:"Yeat",stars:2},
+{name:"Kyler Larkin",stars:2},
+{name:"Meinky",stars:2},
+{name:"Swavvy",stars:2},
+{name:"Wyatt (Wywytheman09)",stars:2},
+
 {name:"Cwiggle",stars:1},
 {name:"Peterwrestles",stars:1},
 {name:"Ceokhii (xrofylol)",stars:1},
-{name:"Zoron",stars:2},
-{name:"Fluxenr",stars:2},
 {name:"Thug (Clappingc)",stars:1},
-{name:"_ncain",stars:3},
-{name:"Perkmusik",stars:2},
 {name:"Bells",stars:1},
-{name:"Syonix",stars:2},
-{name:"Stranger3aia",stars:3},
-{name:"M1x1yana",stars:3},
-{name:"Vxwj",stars:2},
 {name:"Techfaller",stars:1},
-{name:"Yeat",stars:2},
-{name:"Kyler Larkin",stars:2},
 {name:"Wes062289",stars:1},
 {name:"Big waddle",stars:1},
-{name:"Meinky",stars:2},
-{name:"Swavvy",stars:2},
 {name:"Ducfishyx",stars:1},
 {name:"Pabloescobar (X4LIFE)",stars:1},
 {name:"Dannyblaze",stars:1},
@@ -302,16 +309,20 @@ const wrestlers = [
 {name:"Cromatix",stars:1},
 {name:"Kiki",stars:1},
 {name:"RARE",stars:1},
-{name:"Stickofbuter",stars:1},
-{name:"Wyatt (Wywytheman09)",stars:2}
+{name:"Stickofbuter",stars:1}
 
 ]
+
+/* SORT BY STARS */
+
+wrestlers.sort((a,b)=>b.stars-a.stars)
 
 /* RENDER TABLE */
 
 function render(){
 
-const table = document.getElementById("rankingTable")
+const table=document.getElementById("rankingTable")
+
 table.innerHTML=""
 
 wrestlers.forEach((w,i)=>{
@@ -320,7 +331,7 @@ table.innerHTML+=`
 
 <tr>
 
-<td>${i+1}</td>
+<td class="rank">${i+1}</td>
 
 <td>${w.name}</td>
 
@@ -334,7 +345,7 @@ table.innerHTML+=`
 
 }
 
-/* TOP PROSPECTS */
+/* PROSPECTS */
 
 function prospects(){
 
