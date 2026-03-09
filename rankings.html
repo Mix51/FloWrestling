@@ -9,11 +9,11 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(180deg,#0a0a0a,#000000);
+background:#0a0a0a;
 color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav{
 display:flex;
@@ -35,7 +35,6 @@ color:white;
 margin-left:25px;
 text-decoration:none;
 font-weight:bold;
-transition:.2s;
 }
 
 .nav-links a:hover{
@@ -46,87 +45,70 @@ color:red;
 
 .header{
 text-align:center;
-padding:60px 20px;
+padding:50px 20px;
 }
 
 .header h1{
-font-size:48px;
 color:red;
-margin-bottom:10px;
+font-size:42px;
 }
 
-.header p{
-color:#bbb;
+/* SEARCH */
+
+.search-box{
+text-align:center;
+margin-bottom:30px;
 }
 
-/* GRID */
-
-.rankings-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-padding:40px;
-}
-
-/* CARD */
-
-.card{
+.search-box input{
+padding:12px;
+width:300px;
+border:none;
+border-radius:6px;
 background:#111;
-border:1px solid #222;
-border-radius:12px;
-padding:25px;
-box-shadow:0 0 15px rgba(255,0,0,.15);
-transition:.2s;
-}
-
-.card:hover{
-transform:scale(1.02);
-box-shadow:0 0 25px rgba(255,0,0,.4);
-}
-
-.card h2{
-margin-top:0;
-color:red;
-border-bottom:1px solid #333;
-padding-bottom:10px;
-}
-
-/* LIST */
-
-.rank-list{
-list-style:none;
-padding:0;
-margin:0;
-}
-
-.rank-list li{
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid #222;
+color:white;
 font-size:15px;
+border:1px solid #333;
 }
 
-.rank-list li span{
-color:#aaa;
+/* TABLE */
+
+table{
+width:90%;
+margin:auto;
+border-collapse:collapse;
+background:#111;
+box-shadow:0 0 15px rgba(255,0,0,.2);
 }
 
-/* MEDALS */
+th{
+background:#111;
+color:red;
+padding:15px;
+border-bottom:2px solid red;
+}
 
-.gold{color:gold}
-.silver{color:silver}
-.bronze{color:#cd7f32}
+td{
+padding:12px;
+border-bottom:1px solid #222;
+text-align:center;
+color:white;
+}
 
-/* FOOTER */
+tr:hover{
+background:#1a1a1a;
+}
+
+/* TOP 5 BADGES */
+
+.rank1{color:gold;font-weight:bold}
+.rank2{color:silver;font-weight:bold}
+.rank3{color:#cd7f32;font-weight:bold}
 
 footer{
 text-align:center;
 padding:40px;
-color:#666;
-border-top:1px solid #111;
-margin-top:50px;
+color:#777;
 }
 
 </style>
@@ -143,70 +125,152 @@ margin-top:50px;
 </nav>
 
 <div class="header">
-<h1>Rankings</h1>
-<p>Top performers across all statistics</p>
+<h1>Community Rankings</h1>
+<p>Top 5 Wrestlers by Star Rating</p>
 </div>
 
-
-<div class="rankings-grid">
-
-<!-- STAR RATING -->
-
-<div class="card">
-<h2>⭐ Star Rating</h2>
-<ul class="rank-list">
-<li class="gold">1. Lebron <span>⭐⭐⭐</span></li>
-<li class="silver">2. Jibcoo <span>⭐⭐⭐</span></li>
-<li class="bronze">3. Legenito <span>⭐⭐⭐</span></li>
-<li>4. _ncain <span>⭐⭐⭐</span></li>
-<li>5. Stranger3aia <span>⭐⭐⭐</span></li>
-</ul>
+<div class="search-box">
+<input type="text" id="search" placeholder="Search wrestler..." onkeyup="searchWrestler()">
 </div>
 
+<table id="rankingTable">
 
-<!-- MOST ACTIVE -->
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Stars</th>
+<th>Pins</th>
+<th>Record</th>
+<th>Points</th>
+<th>Techfalls</th>
+</tr>
+</thead>
 
-<div class="card">
-<h2>🔥 Most Active</h2>
-<ul class="rank-list">
-<li class="gold">1. Swavvy</li>
-<li class="silver">2. Fluxenr</li>
-<li class="bronze">3. Igor</li>
-<li>4. Wavy7027</li>
-<li>5. Deaniswasted</li>
-</ul>
-</div>
+<tbody>
+
+<tr class="rank1">
+<td>1</td>
+<td>Lebron</td>
+<td>⭐⭐⭐</td>
+<td>0</td>
+<td>0-0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr class="rank2">
+<td>2</td>
+<td>Jibcoo</td>
+<td>⭐⭐⭐</td>
+<td>0</td>
+<td>0-0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr class="rank3">
+<td>3</td>
+<td>Legenito</td>
+<td>⭐⭐⭐</td>
+<td>0</td>
+<td>0-0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>_ncain</td>
+<td>⭐⭐⭐</td>
+<td>0</td>
+<td>0-0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Stranger3aia</td>
+<td>⭐⭐⭐</td>
+<td>0</td>
+<td>0-0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+
+</tbody>
+
+</table>
 
 
-<!-- TOP PROSPECTS -->
+<script>
 
-<div class="card">
-<h2>🚀 Top Prospects</h2>
-<ul class="rank-list">
-<li class="gold">1. Techfaller</li>
-<li class="silver">2. Peterwrestles</li>
-<li class="bronze">3. Golden</li>
-<li>4. Stickofbuter</li>
-<li>5. Pabloescobar</li>
-</ul>
-</div>
+/* ALL WRESTLERS FOR SEARCH */
 
+const wrestlers = [
 
-<!-- COMMUNITY FAVORITES -->
+"Lebron",
+"Jibcoo",
+"Hunt",
+"Igor (NativeorDrink)",
+"Celnudy",
+"Wavy7027",
+"Deaniswasted",
+"A1spect",
+"Hank.67",
+"Legenito",
+"Cwiggle",
+"Peterwrestles",
+"Ceokhii",
+"Zoron",
+"Fluxenr",
+"Thug",
+"_ncain",
+"Perkmusik",
+"Bells",
+"Syonix",
+"Stranger3aia",
+"M1x1yana",
+"Vxwj",
+"Techfaller",
+"Yeat",
+"Kyler Larkin",
+"Wes062289",
+"Big waddle",
+"Meinky",
+"Swavvy",
+"Ducfishyx",
+"Pabloescobar",
+"Dannyblaze",
+"Golden",
+"Purxivet",
+"Aqs",
+"Rgthemanz",
+"Prismatix",
+"Cromatix",
+"Kiki",
+"RARE",
+"Stickofbuter",
+"Wyatt"
 
-<div class="card">
-<h2>🌎 Community Favorites</h2>
-<ul class="rank-list">
-<li class="gold">1. Yeat</li>
-<li class="silver">2. Kyler Larkin</li>
-<li class="bronze">3. Meinky</li>
-<li>4. Syonix</li>
-<li>5. Vxwj</li>
-</ul>
-</div>
+];
 
+/* SEARCH */
 
-</div>
+function searchWrestler(){
+
+let input = document.getElementById("search").value.toLowerCase();
+
+let result = wrestlers.filter(name =>
+name.toLowerCase().includes(input)
+);
+
+console.log(result);
+
+}
+
+</script>
 
 <footer>
 FloWrestling Community Rankings
