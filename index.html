@@ -17,7 +17,7 @@
 body{
 margin:0;
 font-family:Inter;
-background:#0b0b0b;
+background:#0a0a0a;
 color:white;
 }
 
@@ -29,17 +29,18 @@ justify-content:space-between;
 align-items:center;
 padding:18px 40px;
 background:#000;
-border-bottom:1px solid #1f1f1f;
+border-bottom:2px solid #c40000;
 }
 
 .logo{
 font-size:22px;
 font-weight:800;
-color:#d4af37;
+color:#ff1f1f;
+letter-spacing:1px;
 }
 
 nav a{
-color:#aaa;
+color:#ccc;
 text-decoration:none;
 margin-left:25px;
 font-weight:600;
@@ -54,16 +55,16 @@ color:white;
 
 .hero{
 text-align:center;
-padding:70px 20px 40px;
+padding:70px 20px 50px;
 }
 
 .hero h1{
-font-size:46px;
-margin-bottom:8px;
+font-size:48px;
+margin-bottom:10px;
 }
 
 .hero p{
-color:#888;
+color:#aaa;
 }
 
 /* CONTAINER */
@@ -78,23 +79,24 @@ margin:auto;
 
 .search{
 text-align:center;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 .search input{
 padding:12px 15px;
-width:280px;
+width:300px;
 border-radius:6px;
 border:none;
-background:#161616;
+background:#141414;
 color:white;
+outline:none;
 }
 
-/* RANK TABLE */
+/* TABLE */
 
 .rankings{
-background:#111;
-border-radius:10px;
+background:#0f0f0f;
+border-radius:12px;
 overflow:hidden;
 box-shadow:0 10px 40px rgba(0,0,0,.6);
 }
@@ -105,14 +107,14 @@ border-collapse:collapse;
 }
 
 thead{
-background:#181818;
+background:#151515;
 }
 
 th{
-text-align:left;
 padding:16px;
+text-align:left;
+color:#aaa;
 font-size:14px;
-color:#bbb;
 }
 
 td{
@@ -125,24 +127,24 @@ transition:.2s;
 }
 
 tr:hover{
-background:#1a1a1a;
+background:#181818;
 }
 
-/* RANK NUMBER */
+/* RANK */
 
 .rank{
+color:#ff2a2a;
 font-weight:800;
-color:#d4af37;
 }
 
 /* STARS */
 
 .star{
-color:#d4af37;
+color:#ff2a2a;
 font-weight:700;
 }
 
-/* PROSPECTS */
+/* TOP PROSPECTS */
 
 .prospects{
 margin-top:60px;
@@ -155,7 +157,7 @@ margin-bottom:20px;
 .prospect-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:15px;
+gap:16px;
 }
 
 .card{
@@ -164,12 +166,13 @@ border:1px solid #222;
 padding:20px;
 border-radius:10px;
 text-align:center;
-transition:.2s;
+transition:.25s;
 }
 
 .card:hover{
 background:#181818;
 transform:translateY(-4px);
+border-color:#ff1f1f;
 }
 
 /* FOOTER */
@@ -191,6 +194,10 @@ font-size:34px;
 
 nav{
 padding:15px;
+}
+
+.search input{
+width:220px;
 }
 
 }
@@ -215,14 +222,16 @@ padding:15px;
 <section class="hero">
 
 <h1>Roblox Wrestling Rankings</h1>
-<p>Community Star Rankings</p>
+<p>Community Star Ranking System</p>
 
 </section>
 
 <div class="container">
 
 <div class="search">
-<input id="search" placeholder="Search wrestler...">
+
+<input id="search" placeholder="Search wrestler">
+
 </div>
 
 <div class="rankings">
@@ -230,11 +239,13 @@ padding:15px;
 <table>
 
 <thead>
+
 <tr>
 <th>#</th>
 <th>Wrestler</th>
 <th>Stars</th>
 </tr>
+
 </thead>
 
 <tbody id="rankingTable"></tbody>
@@ -261,7 +272,7 @@ FloWrestling Rankings © 2026
 
 <script>
 
-/* WRESTLER LIST */
+/* WRESTLER DATA */
 
 const wrestlers=[
 
@@ -345,7 +356,7 @@ table.innerHTML+=`
 
 }
 
-/* PROSPECTS */
+/* TOP PROSPECTS */
 
 function prospects(){
 
