@@ -28,8 +28,31 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 40px;
-background:#000;
-border-bottom:2px solid #c40000;
+background:#111;
+border-bottom:2px solid red;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:red;
+letter-spacing:1px;
+}
+
+.nav-links a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:bold;
+transition:0.2s;
+font-size:16px;
+}
+
+.nav-links a:hover{
+color:red;
 }
 
 .logo{
@@ -212,9 +235,9 @@ width:220px;
 
 <div class="logo">FloWrestling</div>
 
-<div>
-<a href="#">Rankings</a>
-<a href="#">Community</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="rankings.html">Rankings</a>
 </div>
 
 </nav>
