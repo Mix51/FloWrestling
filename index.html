@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>FloWrestling Rankings</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<nav>
+
+<h1>FloWrestling</h1>
+
+<a href="index.html">Home</a>
+<a href="rankings.html">Rankings</a>
+
+</nav>
+
+<section class="hero">
+
+<h2>Roblox Wrestling Rankings</h2>
+
+<p>Community Driven Wrestling Rankings</p>
+
+</section>
+
+<section class="p4p">
+
+<h2>Pound For Pound Rankings</h2>
+
+<ol id="p4pList"></ol>
+
+</section>
+
+<section class="performance">
+
+<h2>Performance Chart</h2>
+
+<canvas id="performanceChart"></canvas>
+
+</section>
+
+<section class="submitMatch">
+
+<h2>Submit Match Video</h2>
+
+<input id="matchName" placeholder="Wrestler Name">
+
+<input id="matchLink" placeholder="YouTube Link">
+
+<button onclick="submitMatch()">Submit</button>
+
+<div id="matchFeed"></div>
+
+</section>
+
+<section class="bracket">
+
+<h2>Tournament Bracket</h2>
+
+<div class="round">
+
+<div class="match">Lebron vs Hunt</div>
+<div class="match">Jibcoo vs Igor</div>
+
+</div>
+
+<div class="round">
+
+<div class="match">Winner 1 vs Winner 2</div>
+
+</div>
+
+</section>
+
+<section id="adminDashboard">
+
+<h2>Admin Dashboard</h2>
+
+<input id="adminPass" type="password" placeholder="Password">
+
+<button onclick="loginAdmin()">Login</button>
+
+<div id="adminTools">
+
+<button onclick="updateRankings()">Update Rankings</button>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
