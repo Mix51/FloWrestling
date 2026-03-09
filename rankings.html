@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FloWrestling Rankings</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(180deg,#0a0a0a,#000000);
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#111;
+border-bottom:2px solid red;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:red;
+}
+
+.nav-links a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:bold;
+transition:.2s;
+}
+
+.nav-links a:hover{
+color:red;
+}
+
+/* HEADER */
+
+.header{
+text-align:center;
+padding:60px 20px;
+}
+
+.header h1{
+font-size:48px;
+color:red;
+margin-bottom:10px;
+}
+
+.header p{
+color:#bbb;
+}
+
+/* GRID */
+
+.rankings-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+padding:40px;
+}
+
+/* CARD */
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:12px;
+padding:25px;
+box-shadow:0 0 15px rgba(255,0,0,.15);
+transition:.2s;
+}
+
+.card:hover{
+transform:scale(1.02);
+box-shadow:0 0 25px rgba(255,0,0,.4);
+}
+
+.card h2{
+margin-top:0;
+color:red;
+border-bottom:1px solid #333;
+padding-bottom:10px;
+}
+
+/* LIST */
+
+.rank-list{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.rank-list li{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #222;
+font-size:15px;
+}
+
+.rank-list li span{
+color:#aaa;
+}
+
+/* MEDALS */
+
+.gold{color:gold}
+.silver{color:silver}
+.bronze{color:#cd7f32}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#666;
+border-top:1px solid #111;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">FloWrestling</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="rankings.html">Rankings</a>
+</div>
+</nav>
+
+<div class="header">
+<h1>Rankings</h1>
+<p>Top performers across all statistics</p>
+</div>
+
+
+<div class="rankings-grid">
+
+<!-- STAR RATING -->
+
+<div class="card">
+<h2>⭐ Star Rating</h2>
+<ul class="rank-list">
+<li class="gold">1. Lebron <span>⭐⭐⭐</span></li>
+<li class="silver">2. Jibcoo <span>⭐⭐⭐</span></li>
+<li class="bronze">3. Legenito <span>⭐⭐⭐</span></li>
+<li>4. _ncain <span>⭐⭐⭐</span></li>
+<li>5. Stranger3aia <span>⭐⭐⭐</span></li>
+</ul>
+</div>
+
+
+<!-- MOST ACTIVE -->
+
+<div class="card">
+<h2>🔥 Most Active</h2>
+<ul class="rank-list">
+<li class="gold">1. Swavvy</li>
+<li class="silver">2. Fluxenr</li>
+<li class="bronze">3. Igor</li>
+<li>4. Wavy7027</li>
+<li>5. Deaniswasted</li>
+</ul>
+</div>
+
+
+<!-- TOP PROSPECTS -->
+
+<div class="card">
+<h2>🚀 Top Prospects</h2>
+<ul class="rank-list">
+<li class="gold">1. Techfaller</li>
+<li class="silver">2. Peterwrestles</li>
+<li class="bronze">3. Golden</li>
+<li>4. Stickofbuter</li>
+<li>5. Pabloescobar</li>
+</ul>
+</div>
+
+
+<!-- COMMUNITY FAVORITES -->
+
+<div class="card">
+<h2>🌎 Community Favorites</h2>
+<ul class="rank-list">
+<li class="gold">1. Yeat</li>
+<li class="silver">2. Kyler Larkin</li>
+<li class="bronze">3. Meinky</li>
+<li>4. Syonix</li>
+<li>5. Vxwj</li>
+</ul>
+</div>
+
+
+</div>
+
+<footer>
+FloWrestling Community Rankings
+</footer>
+
+</body>
+</html>
