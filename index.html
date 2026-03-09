@@ -1,13 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FloWrestling Rankings</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+
+/* GLOBAL */
+
+body{
+margin:0;
+font-family:Inter;
+background:linear-gradient(180deg,#0a0a0a,#111);
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#000;
+border-bottom:1px solid #222;
+}
+
+.logo{
+font-size:22px;
+font-weight:800;
+color:#d4af37;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+margin-left:25px;
+font-weight:600;
+transition:.2s;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#aaa;
+font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
+
+/* SEARCH */
+
+.search{
+margin:40px 0;
+text-align:center;
+}
+
+.search input{
+padding:12px 15px;
+width:280px;
+border-radius:6px;
+border:none;
+background:#1a1a1a;
+color:white;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#0f0f0f;
+border-radius:10px;
+overflow:hidden;
+}
+
+thead{
+background:#151515;
+}
+
+th{
+text-align:left;
+padding:14px;
+font-weight:600;
+color:#bbb;
+}
+
+td{
+padding:14px;
+border-top:1px solid #1f1f1f;
+}
+
+tr{
+transition:.2s;
+}
+
+tr:hover{
+background:#1a1a1a;
+transform:scale(1.01);
+}
+
+/* STAR */
+
+.star{
+color:#d4af37;
+font-weight:700;
+}
+
+/* TOP PROSPECTS */
+
+.prospects{
+margin-top:60px;
+}
+
+.prospects h2{
+margin-bottom:20px;
+}
+
+.prospect-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:10px;
+text-align:center;
+border:1px solid #222;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#161616;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+text-align:center;
+padding:30px;
+color:#666;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:34px;
+}
+
+nav{
+padding:15px;
+}
+
+}
+
+</style>
 
 </head>
 
@@ -15,87 +195,192 @@
 
 <nav>
 
-<h1>FloWrestling</h1>
+<div class="logo">FloWrestling</div>
 
-<a href="index.html">Home</a>
-<a href="rankings.html">Rankings</a>
+<div>
+<a href="#">Rankings</a>
+<a href="#">Community</a>
+</div>
 
 </nav>
 
 <section class="hero">
 
-<h2>Roblox Wrestling Rankings</h2>
-
-<p>Community Driven Wrestling Rankings</p>
-
-</section>
-
-<section class="p4p">
-
-<h2>Pound For Pound Rankings</h2>
-
-<ol id="p4pList"></ol>
+<h1>Roblox Wrestling Rankings</h1>
+<p>Official community ranking system</p>
 
 </section>
 
-<section class="performance">
+<div class="container">
 
-<h2>Performance Chart</h2>
+<div class="search">
 
-<canvas id="performanceChart"></canvas>
-
-</section>
-
-<section class="submitMatch">
-
-<h2>Submit Match Video</h2>
-
-<input id="matchName" placeholder="Wrestler Name">
-
-<input id="matchLink" placeholder="YouTube Link">
-
-<button onclick="submitMatch()">Submit</button>
-
-<div id="matchFeed"></div>
-
-</section>
-
-<section class="bracket">
-
-<h2>Tournament Bracket</h2>
-
-<div class="round">
-
-<div class="match">Lebron vs Hunt</div>
-<div class="match">Jibcoo vs Igor</div>
+<input type="text" id="search" placeholder="Search wrestler...">
 
 </div>
 
-<div class="round">
+<table>
 
-<div class="match">Winner 1 vs Winner 2</div>
+<thead>
+
+<tr>
+<th>#</th>
+<th>Wrestler</th>
+<th>Stars</th>
+</tr>
+
+</thead>
+
+<tbody id="rankingTable">
+
+</tbody>
+
+</table>
+
+<section class="prospects">
+
+<h2>Top Prospects ⭐⭐⭐</h2>
+
+<div class="prospect-grid" id="prospects">
 
 </div>
 
 </section>
 
-<section id="adminDashboard">
+</div>
 
-<h2>Admin Dashboard</h2>
+<footer>
 
-<input id="adminPass" type="password" placeholder="Password">
+FloWrestling Rankings © 2026
 
-<button onclick="loginAdmin()">Login</button>
+</footer>
 
-<div id="adminTools">
+<script>
 
-<button onclick="updateRankings()">Update Rankings</button>
+/* WRESTLER DATA */
+
+const wrestlers = [
+
+{name:"Lebron",stars:3},
+{name:"Jibcoo",stars:3},
+{name:"Hunt",stars:2},
+{name:"Igor (NativeorDrink)",stars:2},
+{name:"Celnudy",stars:2},
+{name:"Wavy7027",stars:2},
+{name:"Deaniswasted",stars:2},
+{name:"A1spect",stars:2},
+{name:"Hank.67",stars:2},
+{name:"Legenito",stars:3},
+{name:"Cwiggle",stars:1},
+{name:"Peterwrestles",stars:1},
+{name:"Ceokhii (xrofylol)",stars:1},
+{name:"Zoron",stars:2},
+{name:"Fluxenr",stars:2},
+{name:"Thug (Clappingc)",stars:1},
+{name:"_ncain",stars:3},
+{name:"Perkmusik",stars:2},
+{name:"Bells",stars:1},
+{name:"Syonix",stars:2},
+{name:"Stranger3aia",stars:3},
+{name:"M1x1yana",stars:3},
+{name:"Vxwj",stars:2},
+{name:"Techfaller",stars:1},
+{name:"Yeat",stars:2},
+{name:"Kyler Larkin",stars:2},
+{name:"Wes062289",stars:1},
+{name:"Big waddle",stars:1},
+{name:"Meinky",stars:2},
+{name:"Swavvy",stars:2},
+{name:"Ducfishyx",stars:1},
+{name:"Pabloescobar (X4LIFE)",stars:1},
+{name:"Dannyblaze",stars:1},
+{name:"Golden",stars:1},
+{name:"Purxivet (Jason Richardson)",stars:1},
+{name:"Aqs (spookylookin,Logan)",stars:1},
+{name:"Rgthemanz",stars:1},
+{name:"Prismatix",stars:1},
+{name:"Cromatix",stars:1},
+{name:"Kiki",stars:1},
+{name:"RARE",stars:1},
+{name:"Stickofbuter",stars:1},
+{name:"Wyatt (Wywytheman09)",stars:2}
+
+]
+
+/* RENDER TABLE */
+
+function render(){
+
+const table = document.getElementById("rankingTable")
+table.innerHTML=""
+
+wrestlers.forEach((w,i)=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${i+1}</td>
+
+<td>${w.name}</td>
+
+<td class="star">${"⭐".repeat(w.stars)}</td>
+
+</tr>
+
+`
+
+})
+
+}
+
+/* TOP PROSPECTS */
+
+function prospects(){
+
+const grid=document.getElementById("prospects")
+
+wrestlers
+.filter(w=>w.stars===3)
+.forEach(w=>{
+
+grid.innerHTML+=`
+
+<div class="card">
+
+<h3>${w.name}</h3>
+<p>⭐⭐⭐ Prospect</p>
 
 </div>
 
-</section>
+`
 
-<script src="script.js"></script>
+})
+
+}
+
+/* SEARCH */
+
+document.getElementById("search").addEventListener("input",function(){
+
+let term=this.value.toLowerCase()
+
+let rows=document.querySelectorAll("#rankingTable tr")
+
+rows.forEach(r=>{
+
+let name=r.children[1].innerText.toLowerCase()
+
+r.style.display=name.includes(term) ? "" : "none"
+
+})
+
+})
+
+render()
+prospects()
+
+</script>
 
 </body>
 
