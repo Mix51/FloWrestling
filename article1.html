@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRLL Draft Recap - Season 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poetsen One', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: url('custom-cursor.png'), auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header nav {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .header nav a:hover {
+            color: #007bff;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            color: #001f3f;
+            margin-bottom: 20px;
+        }
+
+        .article-content p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode a {
+            color: #e0e0e0;
+        }
+
+        .dark-mode a:hover {
+            color: #007bff;
+        }
+
+        .dark-mode .header, .dark-mode .footer {
+            background-color: #000;
+        }
+
+        .dark-mode .article-content {
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background-color: #001f3f;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #007bff;
+            transform: scale(1.1);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .footer nav a:hover {
+            color: #007bff;
+        }
+
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">SportPulse</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="live-scores.html">Live Scores</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <button class="dark-mode-toggle">🌙</button>
+
+    <main>
+        <section class="article-content">
+            <h2>RRLL Draft Recap – Season 2</h2>
+            <p>The RRLL Season 2 Draft has officially concluded! With team owners securing their dream rosters, this draft was full of surprising picks, strategic decisions, and big names. Let's dive into the highlights and recap the major moves.</p>
+
+            <h3>Draft Headlines & Highlights</h3>
+
+            <p><strong>🔥 Florida Flamingos Build Around MiniVIP</strong><br>
+            The Flamingos kicked things off by selecting MiniVIP with the first overall pick, cementing their offensive line. They continued to bolster their squad with strong picks like Fentanyl OBJ, KingKhrist, and Siah.<br>
+            <em>Summary:</em> The Flamingos focused on high-scoring players to build a powerhouse offense.</p>
+
+            <p><strong>⚓ Navy Sailors Secure Versatile Talent</strong><br>
+            The Sailors took Mix with their second overall pick, focusing on versatility and depth. They followed up by adding key players like Lurk, ThatOneKingGuy, and MrWorldWide to create a well-rounded team.<br>
+            <em>Summary:</em> The Sailors made strategic picks for a versatile and adaptable roster.</p>
+
+            <p><strong>🦟 Montgomery Mosquitos Go Defensive and Deep</strong><br>
+            The Mosquitos selected Altitude with the third overall pick, focusing on strong defensive play. They further solidified their roster with picks like Cody, 5StarMax, and Pink Grandma.<br>
+            <em>Summary:</em> The Mosquitos stacked up on defense and veteran leadership.</p>
+
+            <p><strong>🐾 Capybaras Add High-Value Talent</strong><br>
+            The Capybaras selected Tbestg early on, followed by some key picks like MikeEvans, Tipy, and Crazy!—all proven players with immense value.<br>
+            <em>Summary:</em> The Capybaras brought in experienced and skilled players to strengthen their team.</p>
+
+            <h3>What's Next?</h3>
+            <ul>
+                <li><strong>Training and scrims</strong> are underway as teams prepare for preseason games.</li>
+                <li>Keep an eye on the <strong>#draft-recap</strong> for all the latest updates and insights.</li>
+                <li><strong>Media coverage</strong> and player spotlights will follow soon!</li>
+            </ul>
+
+            <p>This season is set to be exciting — stay tuned for more updates!</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="live-scores.html">Live Scores</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+            <a href="statsheet.html">Stats</a>
+        </nav>
+        <p>&copy; 2024 SportPulse. All Rights Reserved.</p>
+    </footer>
+
+    <button class="scroll-to-top">↑</button>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

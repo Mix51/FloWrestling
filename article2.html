@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportPulse - Preseason Article</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poetsen One', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: url('custom-cursor.png'), auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header nav {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .header nav a:hover {
+            color: #007bff;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            color: #001f3f;
+            margin-bottom: 20px;
+        }
+
+        .article-content p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode a {
+            color: #e0e0e0;
+        }
+
+        .dark-mode a:hover {
+            color: #007bff;
+        }
+
+        .dark-mode .header, .dark-mode .footer {
+            background-color: #000;
+        }
+
+        .dark-mode .article-content {
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background-color: #001f3f;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #007bff;
+            transform: scale(1.1);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .footer nav a:hover {
+            color: #007bff;
+        }
+
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">SportPulse</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="live-scores.html">Live Scores</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <button class="dark-mode-toggle">🌙</button>
+
+    <main>
+        <section class="article-content">
+            <img src="https://i.imgur.com/X0VNONO.png" alt="Preseason Article Image">
+            <h2>Preseason Roundup – What to Expect in Season 2</h2>
+            <p>As the start of Season 2 approaches, fans are buzzing with anticipation over the new teams and players joining the league. This season promises to be full of surprises, with fresh talent, high-stakes matchups, and some bold strategies.</p>
+
+            <p>Key players to watch out for include MiniVIP, who has been heavily hyped as the potential league MVP, and Mix, who brings versatility to the Navy Sailors. Teams have been making their final tweaks to their rosters in preparation for the preseason games, which will help set the stage for the opening matchups.</p>
+
+            <p>Expect fireworks from the Florida Flamingos as they add new offensive power to their lineup. Meanwhile, teams like the Montgomery Mosquitos and Capybaras have been working on strengthening their defense, preparing to shut down high-scoring teams. It's going to be an exciting season, with rivalries heating up and underdogs rising to the occasion.</p>
+
+            <h3>Preseason Preview: Who's on Top?</h3>
+            <p>The preseason games will offer a sneak peek into the new team dynamics. Early predictions place the Florida Flamingos and Navy Sailors at the top of the standings, with their star players leading the charge. However, don't count out the Montgomery Mosquitos, whose defensive lineup could pose a serious challenge.</p>
+
+            <p>As teams gear up for the preseason, all eyes will be on how the new recruits gel with their teams. With new strategies and fresh faces, this season will definitely be one for the books. Be sure to stay tuned as we bring you all the action, stats, and highlights from the road to the regular season!</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="live-scores.html">Live Scores</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+            <a href="statsheet.html">Stats</a>
+        </nav>
+        <p>&copy; 2024 SportPulse. All Rights Reserved.</p>
+    </footer>
+
+    <button class="scroll-to-top">↑</button>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

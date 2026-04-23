@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportPulse - Home</title>
+    <title>SportPulse - Highlights</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap" rel="stylesheet">
@@ -70,116 +70,43 @@
             letter-spacing: 2px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 123, 255, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0;
-            padding: 0 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            margin-top: 10px;
-            padding: 0 20px;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #001f3f;
-            color: #fff;
-            text-align: center;
-            padding: 25px 10px;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-        }
-
-        .footer nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-transform: uppercase;
-            font-size: 0.8em;
-        }
-
-        .footer nav a:hover {
-            color: #007bff;
-        }
-
-        .footer p {
-            margin: 10px 0 0;
-            font-size: 0.8em;
-        }
-
-        /* News Grid */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        /* Highlights Section */
+        .highlights-section {
             margin-top: 30px;
         }
 
-        .news-item {
+        .highlights-section h2 {
+            color: #001f3f;
+            margin-bottom: 20px;
+        }
+
+        .highlight-card {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            text-align: center;
-            overflow: hidden;
+            margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .news-item:hover {
+        .highlight-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .news-item img {
-            max-width: 100%;
+        .highlight-card video {
+            width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
-        .news-item h3 {
-            margin-top: 15px;
+        .highlight-card h3 {
             color: #001f3f;
-            font-size: 1.4em;
-            transition: color 0.3s;
+            margin: 10px 0;
         }
 
-        .news-item p {
-            margin-top: 10px;
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        .news-item a:hover h3 {
-            color: #007bff;
+        .highlight-card p {
+            color: #555;
         }
 
         /* Dark Mode */
@@ -200,20 +127,9 @@
             background-color: #000;
         }
 
-        .dark-mode .news-item {
+        .dark-mode .highlight-card {
             background-color: #333;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .hero {
-                height: 350px;
-            }
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Dark Mode Toggle */
@@ -258,6 +174,32 @@
             background-color: #0056b3;
             transform: scale(1.1);
         }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .footer nav a:hover {
+            color: #007bff;
+        }
+
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
@@ -269,38 +211,43 @@
             <a href="live-scores.html">Live Scores</a>
             <a href="highlights.html">Highlights</a>
             <a href="contact.html">Contact</a>
-            <a href="statsheet.html">Stats</a>
         </nav>
     </header>
-
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Welcome to SportPulse</h1>
-            <p>Your daily pulse on sports news and updates</p>
-        </div>
-    </section>
 
     <button class="dark-mode-toggle">🌙</button>
 
     <main>
-        <section id="news" class="content">
-            <h2>Featured News</h2>
-            <div class="news-grid">
-                <article class="news-item">
-                    <img src="https://i.imgur.com/jSWMvXy.png"" alt="Draft-Recap">
-                    <h3>Post-Draft Insights Coming Soon</h3>
-                    <p>Media coverage and in-depth analysis of each pick will be released this week.</p>
-                    <a href="article1.html">Read More</a>
-                </article>
-                <article class="news-item">
-                    <img src="https://i.imgur.com/X0VNONO.png" alt="News Image 2">
-                    <h3> Preseason Begins — Free Agents on the Clock</h3>
-                    <p>Free agents are officially on notice as teams begin finalizing rosters for the new season.</p>
-                    <a href="article2.html">Read More</a>
-                </article>
-                <!-- Add more articles here -->
+        <section class="highlights-section">
+            <h2>Sports Highlights</h2>
+
+            <div class="highlight-card">
+                <video controls>
+                    <source src="highlight1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Highlight Title 1</h3>
+                <p>Description of the highlight goes here. Brief summary or exciting moment recap.</p>
             </div>
+
+            <div class="highlight-card">
+                <video controls>
+                    <source src="highlight2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Highlight Title 2</h3>
+                <p>Description of the highlight goes here. Brief summary or exciting moment recap.</p>
+            </div>
+
+            <div class="highlight-card">
+                <video controls>
+                    <source src="highlight3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Highlight Title 3</h3>
+                <p>Description of the highlight goes here. Brief summary or exciting moment recap.</p>
+            </div>
+
+            <!-- Add more highlight cards here -->
         </section>
     </main>
 
@@ -311,6 +258,7 @@
             <a href="live-scores.html">Live Scores</a>
             <a href="highlights.html">Highlights</a>
             <a href="contact.html">Contact</a>
+            <a href="statsheet.html">Stats</a>
         </nav>
         <p>&copy; 2024 SportPulse. All Rights Reserved.</p>
     </footer>

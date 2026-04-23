@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportPulse - Home</title>
+    <title>SportPulse - News</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap" rel="stylesheet">
@@ -68,73 +68,6 @@
             font-size: 2.5em;
             font-weight: bold;
             letter-spacing: 2px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 123, 255, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0;
-            padding: 0 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            margin-top: 10px;
-            padding: 0 20px;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #001f3f;
-            color: #fff;
-            text-align: center;
-            padding: 25px 10px;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-        }
-
-        .footer nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-transform: uppercase;
-            font-size: 0.8em;
-        }
-
-        .footer nav a:hover {
-            color: #007bff;
-        }
-
-        .footer p {
-            margin: 10px 0 0;
-            font-size: 0.8em;
         }
 
         /* News Grid */
@@ -207,10 +140,6 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
-            .hero {
-                height: 350px;
-            }
-
             .news-grid {
                 grid-template-columns: 1fr;
             }
@@ -258,6 +187,32 @@
             background-color: #0056b3;
             transform: scale(1.1);
         }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .footer nav a:hover {
+            color: #007bff;
+        }
+
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
@@ -273,35 +228,37 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Welcome to SportPulse</h1>
-            <p>Your daily pulse on sports news and updates</p>
-        </div>
-    </section>
-
     <button class="dark-mode-toggle">🌙</button>
 
     <main>
-        <section id="news" class="content">
-            <h2>Featured News</h2>
-            <div class="news-grid">
-                <article class="news-item">
-                    <img src="https://i.imgur.com/jSWMvXy.png"" alt="Draft-Recap">
-                    <h3>Post-Draft Insights Coming Soon</h3>
-                    <p>Media coverage and in-depth analysis of each pick will be released this week.</p>
-                    <a href="article1.html">Read More</a>
-                </article>
-                <article class="news-item">
-                    <img src="https://i.imgur.com/X0VNONO.png" alt="News Image 2">
-                    <h3> Preseason Begins — Free Agents on the Clock</h3>
-                    <p>Free agents are officially on notice as teams begin finalizing rosters for the new season.</p>
-                    <a href="article2.html">Read More</a>
-                </article>
-                <!-- Add more articles here -->
-            </div>
-        </section>
+        <h2>Latest Sports News</h2>
+        <div class="news-grid">
+            <article class="news-item">
+                <img src="news-image1.jpg" alt="News Image 1">
+                <h3>Breaking: Major Trade Rumors in the NBA</h3>
+                <p>Get the latest insights and updates on potential trades that could shake up the league.</p>
+                <a href="article1.html">Read More</a>
+            </article>
+            <article class="news-item">
+                <img src="news-image2.jpg" alt="News Image 2">
+                <h3>Premier League: Title Race Heats Up</h3>
+                <p>A closer look at the teams vying for the Premier League title as the season intensifies.</p>
+                <a href="article2.html">Read More</a>
+            </article>
+            <article class="news-item">
+                <img src="news-image3.jpg" alt="News Image 3">
+                <h3>Formula 1: Mid-Season Analysis</h3>
+                <p>Reviewing the top contenders and surprises in this year's Formula 1 season.</p>
+                <a href="article3.html">Read More</a>
+            </article>
+            <article class="news-item">
+                <img src="news-image4.jpg" alt="News Image 4">
+                <h3>Olympics 2024: Key Athletes to Watch</h3>
+                <p>Profiles of the athletes expected to shine at the upcoming Summer Olympics.</p>
+                <a href="article4.html">Read More</a>
+            </article>
+            <!-- Add more news items here -->
+        </div>
     </main>
 
     <footer class="footer">

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportPulse - Preseason Training in Professional Sports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poetsen One', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: url('custom-cursor.png'), auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header nav {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .header nav a:hover {
+            color: #007bff;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .article-content h2 {
+            color: #001f3f;
+            margin-bottom: 20px;
+        }
+
+        .article-content p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode a {
+            color: #e0e0e0;
+        }
+
+        .dark-mode a:hover {
+            color: #007bff;
+        }
+
+        .dark-mode .header, .dark-mode .footer {
+            background-color: #000;
+        }
+
+        .dark-mode .article-content {
+            background-color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background-color: #001f3f;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #007bff;
+            transform: scale(1.1);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .footer nav a:hover {
+            color: #007bff;
+        }
+
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">SportPulse</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="live-scores.html">Live Scores</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <button class="dark-mode-toggle">🌙</button>
+
+    <main>
+        <section class="article-content">
+            <img src="https://i.imgur.com/zaF43sk.png" alt="Preseason Training Image">
+            <h2>The Importance of Preseason Training in Professional Sports</h2>
+            <p>Preseason training is often seen as a tedious necessity for professional athletes, but it is the cornerstone of any successful season. Whether it is basketball, football, or soccer, athletes depend on the rigorous training programs during the offseason to prepare their bodies for the demands of the upcoming season.</p>
+            <p>One of the main benefits of preseason training is that it allows athletes to get back into competitive shape after a long break. After months of rest, players can experience decreased muscle mass, endurance, and overall fitness. The preseason period is crucial for regaining this lost fitness and working on specific areas that need improvement.</p>
+            <p>Another key aspect of preseason training is injury prevention. Through targeted exercises and conditioning, athletes can reduce the risk of injuries during the regular season. Strengthening key muscle groups and increasing flexibility can go a long way in preventing strains, sprains, and other injuries that could sideline a player for weeks or even months.</p>
+            <p>Preseason also serves as an opportunity to build team chemistry. While individual fitness is important, the ability to work cohesively as a unit is equally vital. Whether it's refining plays, learning new strategies, or simply developing communication skills on the field, preseason is when teams get to gel and form a bond that will pay off during the regular season.</p>
+            <p>In conclusion, preseason training is much more than just a physical requirement; it is an essential phase for athletes to prepare mentally, physically, and strategically for the challenges ahead. By focusing on fitness, injury prevention, and team dynamics, athletes and teams can ensure they start the season strong and remain competitive throughout the year.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="live-scores.html">Live Scores</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+            <a href="statsheet.html">Stats</a>
+        </nav>
+        <p>&copy; 2024 SportPulse. All Rights Reserved.</p>
+    </footer>
+
+    <button class="scroll-to-top">↑</button>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportPulse - Home</title>
+    <title>SportPulse - Live Scores</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poetsen+One&display=swap" rel="stylesheet">
@@ -70,115 +70,53 @@
             letter-spacing: 2px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 123, 255, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0;
-            padding: 0 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            margin-top: 10px;
-            padding: 0 20px;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #001f3f;
-            color: #fff;
-            text-align: center;
-            padding: 25px 10px;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-        }
-
-        .footer nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-transform: uppercase;
-            font-size: 0.8em;
-        }
-
-        .footer nav a:hover {
-            color: #007bff;
-        }
-
-        .footer p {
-            margin: 10px 0 0;
-            font-size: 0.8em;
-        }
-
-        /* News Grid */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        /* Live Scores Section */
+        .scores-section {
             margin-top: 30px;
         }
 
-        .news-item {
+        .scores-section h2 {
+            color: #001f3f;
+            margin-bottom: 20px;
+        }
+
+        .score-card {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            text-align: center;
-            overflow: hidden;
+            margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .news-item:hover {
+        .score-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .news-item img {
-            max-width: 100%;
-            border-radius: 10px;
+        .team {
+            flex: 1;
+            text-align: center;
         }
 
-        .news-item h3 {
-            margin-top: 15px;
+        .team h3 {
+            margin: 5px 0;
             color: #001f3f;
             font-size: 1.4em;
-            transition: color 0.3s;
         }
 
-        .news-item p {
-            margin-top: 10px;
-            color: #666;
-            font-size: 0.9em;
+        .team img {
+            max-width: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
         }
 
-        .news-item a:hover h3 {
+        .score {
+            font-size: 2em;
+            font-weight: bold;
             color: #007bff;
         }
 
@@ -200,20 +138,9 @@
             background-color: #000;
         }
 
-        .dark-mode .news-item {
+        .dark-mode .score-card {
             background-color: #333;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .hero {
-                height: 350px;
-            }
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Dark Mode Toggle */
@@ -258,6 +185,32 @@
             background-color: #0056b3;
             transform: scale(1.1);
         }
+
+        /* Footer */
+        .footer {
+            background-color: #001f3f;
+            color: #fff;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+
+        .footer nav a:hover {
+            color: #007bff;
+        }
+
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
@@ -273,34 +226,45 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Welcome to SportPulse</h1>
-            <p>Your daily pulse on sports news and updates</p>
-        </div>
-    </section>
-
     <button class="dark-mode-toggle">🌙</button>
 
     <main>
-        <section id="news" class="content">
-            <h2>Featured News</h2>
-            <div class="news-grid">
-                <article class="news-item">
-                    <img src="https://i.imgur.com/jSWMvXy.png"" alt="Draft-Recap">
-                    <h3>Post-Draft Insights Coming Soon</h3>
-                    <p>Media coverage and in-depth analysis of each pick will be released this week.</p>
-                    <a href="article1.html">Read More</a>
-                </article>
-                <article class="news-item">
-                    <img src="https://i.imgur.com/X0VNONO.png" alt="News Image 2">
-                    <h3> Preseason Begins — Free Agents on the Clock</h3>
-                    <p>Free agents are officially on notice as teams begin finalizing rosters for the new season.</p>
-                    <a href="article2.html">Read More</a>
-                </article>
-                <!-- Add more articles here -->
+        <section class="scores-section">
+            <h2>Live Scores</h2>
+            <div class="score-card">
+                <div class="team">
+                    <img src="team-logo1.png" alt="Team 1 Logo">
+                    <h3>Team A</h3>
+                </div>
+                <div class="score">3 - 2</div>
+                <div class="team">
+                    <img src="team-logo2.png" alt="Team 2 Logo">
+                    <h3>Team B</h3>
+                </div>
             </div>
+            <div class="score-card">
+                <div class="team">
+                    <img src="team-logo3.png" alt="Team 3 Logo">
+                    <h3>Team C</h3>
+                </div>
+                <div class="score">1 - 1</div>
+                <div class="team">
+                    <img src="team-logo4.png" alt="Team 4 Logo">
+                    <h3>Team D</h3>
+                </div>
+            </div>
+            <div class="score-card">
+                <div class="team">
+                    <img src="team-logo5.png" alt="Team 5 Logo">
+                    <h3>Team E</h3>
+                </div>
+                <div class="score">0 - 4</div>
+                <div class="team">
+                    <img src="team-logo6.png" alt="Team 6 Logo">
+                    <h3>Team F</h3>
+                </div>
+            </div>
+            <!-- Add more score cards here -->
         </section>
     </main>
 
